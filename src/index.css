@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #09090b;
+    color: #fafafa;
+  }
+}
+
+@keyframes loading {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
