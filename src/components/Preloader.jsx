@@ -20,10 +20,10 @@ const Preloader = () => {
         }`}
       >
         <h1 className="text-3xl font-bold mb-6">
-          Alia<span className="text-violet-500">.</span>
+          Alia<span className="text-blue-500">.</span>
         </h1>
         <div className="w-48 h-1 bg-zinc-800 rounded-full overflow-hidden">
-          <div className="h-full bg-violet-500 rounded-full animate-[loading_2s_ease-in-out_forwards]"></div>
+          <div className="h-full bg-blue-500 rounded-full animate-[loading_2s_ease-in-out_forwards]"></div>
         </div>
         <p className="text-zinc-500 text-sm mt-4">Loading...</p>
       </div>

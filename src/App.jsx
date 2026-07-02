@@ -14,13 +14,13 @@ function App() {
           <div className="animate__animated animate__fadeInUp animate__delay-1s">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-6 bg-zinc-800 border border-zinc-700 px-4 py-2 rounded-full text-sm text-zinc-300">
-              <span className="w-2 h-2 rounded-full bg-violet-500 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
               Available for collaboration
             </div>
 
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-4">
               Hi, I'm{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
                 Alia Risky
               </span>
               <br />
@@ -37,7 +37,7 @@ function App() {
             <div className="flex flex-wrap gap-3">
               <a
                 href=""
-                className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 px-6 py-3 rounded-xl font-medium transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/25"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
               >
                 Download CV
                 <i className="ri-download-cloud-line"></i>
@@ -54,15 +54,15 @@ function App() {
             {/* Stats */}
             <div className="flex gap-8 mt-10 pt-8 border-t border-zinc-800">
               <div>
-                <span className="text-3xl font-bold text-violet-400">5+</span>
+                <span className="text-3xl font-bold text-blue-400">5+</span>
                 <p className="text-sm text-zinc-500 mt-1">Achievements</p>
               </div>
               <div>
-                <span className="text-3xl font-bold text-violet-400">3+</span>
+                <span className="text-3xl font-bold text-blue-400">3+</span>
                 <p className="text-sm text-zinc-500 mt-1">Years Experience</p>
               </div>
               <div>
-                <span className="text-3xl font-bold text-violet-400">4+</span>
+                <span className="text-3xl font-bold text-blue-400">4+</span>
                 <p className="text-sm text-zinc-500 mt-1">Organizations</p>
               </div>
             </div>
@@ -71,7 +71,7 @@ function App() {
           {/* Image */}
           <div className="relative flex justify-center md:justify-end animate__animated animate__fadeInUp animate__delay-2s">
             {/* Glow behind image */}
-            <div className="absolute inset-0 bg-violet-600/20 blur-3xl rounded-full scale-75"></div>
+            <div className="absolute inset-0 bg-blue-600/20 blur-3xl rounded-full scale-75"></div>
             <img
               src={DataImage.HeroImage}
               alt="Alia Risky Fauziah"
@@ -85,7 +85,7 @@ function App() {
       {/* ── ABOUT ────────────────────────────────────────── */}
       <section id="tentang" className="py-20">
         <div className="text-center mb-14" data-aos="fade-up" data-aos-duration="800">
-          <p className="text-sm text-violet-400 font-semibold uppercase tracking-widest mb-2">
+          <p className="text-sm text-blue-400 font-semibold uppercase tracking-widest mb-2">
             Tentang Saya
           </p>
           <h2 className="text-4xl font-bold">Who Am I?</h2>
@@ -106,7 +106,7 @@ function App() {
             />
             <div>
               <h3 className="text-xl font-bold mb-1">Alia Risky Fauziah</h3>
-              <p className="text-violet-400 text-sm mb-4">
+              <p className="text-blue-400 text-sm mb-4">
                 English Education · Universitas Negeri Malang
               </p>
               <p className="text-zinc-400 leading-relaxed">
@@ -129,7 +129,7 @@ function App() {
             data-aos="fade-up"
             data-aos-duration="800"
           >
-            <p className="text-sm text-violet-400 font-semibold uppercase tracking-widest mb-2">
+            <p className="text-sm text-blue-400 font-semibold uppercase tracking-widest mb-2">
               Aktivitas
             </p>
             <h2 className="text-3xl font-bold">Organization</h2>
@@ -142,7 +142,7 @@ function App() {
             {listTools.map((tool) => (
               <div
                 key={tool.id}
-                className="group flex items-center gap-4 p-4 bg-zinc-800/50 border border-zinc-700 rounded-xl hover:border-violet-500/50 hover:bg-zinc-800 transition-all duration-200"
+                className="group flex items-center gap-4 p-4 bg-zinc-800/50 border border-zinc-700 rounded-xl hover:border-blue-500/50 hover:bg-zinc-800 transition-all duration-200"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay={tool.dad}
@@ -171,7 +171,7 @@ function App() {
             data-aos="fade-up"
             data-aos-duration="800"
           >
-            <p className="text-sm text-violet-400 font-semibold uppercase tracking-widest mb-2">
+            <p className="text-sm text-blue-400 font-semibold uppercase tracking-widest mb-2">
               Riwayat
             </p>
             <h2 className="text-3xl font-bold">Education</h2>
@@ -195,10 +195,10 @@ function App() {
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-0 top-5 w-14 h-14 flex-shrink-0 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-violet-500 border-4 border-zinc-900 z-10"></div>
+                    <div className="w-4 h-4 rounded-full bg-blue-500 border-4 border-zinc-900 z-10"></div>
                   </div>
 
-                  <div className="flex items-center gap-4 w-full p-5 bg-zinc-800/50 border border-zinc-700 rounded-xl hover:border-violet-500/50 transition-all duration-200">
+                  <div className="flex items-center gap-4 w-full p-5 bg-zinc-800/50 border border-zinc-700 rounded-xl hover:border-blue-500/50 transition-all duration-200">
                     <div className="w-14 h-14 flex-shrink-0 bg-zinc-700 rounded-xl overflow-hidden">
                       <img
                         src={tool.gambar}
@@ -212,7 +212,7 @@ function App() {
                       <p className="text-sm text-zinc-500 mt-0.5">{tool.ket}</p>
                     </div>
                     <div className="ml-auto">
-                      <span className="text-xs font-medium bg-violet-500/10 text-violet-400 border border-violet-500/20 px-3 py-1 rounded-full">
+                      <span className="text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full">
                         {index === listTools2.length - 1 ? "Aktif" : "Lulus"}
                       </span>
                     </div>
@@ -231,7 +231,7 @@ function App() {
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <p className="text-sm text-violet-400 font-semibold uppercase tracking-widest mb-2">
+          <p className="text-sm text-blue-400 font-semibold uppercase tracking-widest mb-2">
             Karya Saya
           </p>
           <h2 className="text-4xl font-bold">Portfolio</h2>
@@ -244,7 +244,7 @@ function App() {
           {listProyek.map((proyek) => (
             <div
               key={proyek.id}
-              className="group bg-zinc-800/50 border border-zinc-700 rounded-2xl overflow-hidden hover:border-violet-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-violet-500/5"
+              className="group bg-zinc-800/50 border border-zinc-700 rounded-2xl overflow-hidden hover:border-blue-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5"
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay={proyek.dad}
@@ -271,7 +271,7 @@ function App() {
                   {proyek.tools.map((tool, index) => (
                     <span
                       key={index}
-                      className="text-xs font-medium px-3 py-1 bg-violet-500/10 text-violet-400 border border-violet-500/20 rounded-full"
+                      className="text-xs font-medium px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full"
                     >
                       {tool}
                     </span>
@@ -282,7 +282,7 @@ function App() {
                   href={proyek.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-violet-400 hover:text-violet-300 transition-colors group/link"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors group/link"
                 >
                   Lihat Selengkapnya
                   <i className="ri-arrow-right-line transition-transform group-hover/link:translate-x-1"></i>
@@ -300,7 +300,7 @@ function App() {
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <p className="text-sm text-violet-400 font-semibold uppercase tracking-widest mb-2">
+          <p className="text-sm text-blue-400 font-semibold uppercase tracking-widest mb-2">
             Hubungi Saya
           </p>
           <h2 className="text-4xl font-bold">Contact</h2>
@@ -330,7 +330,7 @@ function App() {
                   type="text"
                   name="nama"
                   placeholder="Nama kamu..."
-                  className="bg-zinc-900 border border-zinc-700 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500/50 px-4 py-3 rounded-xl text-sm transition-colors placeholder:text-zinc-600"
+                  className="bg-zinc-900 border border-zinc-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 px-4 py-3 rounded-xl text-sm transition-colors placeholder:text-zinc-600"
                   required
                 />
               </div>
@@ -343,7 +343,7 @@ function App() {
                   type="email"
                   name="email"
                   placeholder="email@kamu.com"
-                  className="bg-zinc-900 border border-zinc-700 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500/50 px-4 py-3 rounded-xl text-sm transition-colors placeholder:text-zinc-600"
+                  className="bg-zinc-900 border border-zinc-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 px-4 py-3 rounded-xl text-sm transition-colors placeholder:text-zinc-600"
                   required
                 />
               </div>
@@ -360,14 +360,14 @@ function App() {
                   id="pesan"
                   rows="5"
                   placeholder="Tulis pesanmu di sini..."
-                  className="bg-zinc-900 border border-zinc-700 focus:border-violet-500 focus:outline-none focus:ring-1 focus:ring-violet-500/50 px-4 py-3 rounded-xl text-sm transition-colors resize-none placeholder:text-zinc-600"
+                  className="bg-zinc-900 border border-zinc-700 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500/50 px-4 py-3 rounded-xl text-sm transition-colors resize-none placeholder:text-zinc-600"
                   required
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-500 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/25 cursor-pointer mt-1"
+                className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 cursor-pointer mt-1"
               >
                 Kirim Pesan
                 <i className="ri-send-plane-line"></i>

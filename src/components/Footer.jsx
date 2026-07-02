@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Brand */}
         <div>
           <h1 className="text-2xl font-bold">
-            Alia<span className="text-violet-500">.</span>
+            Alia<span className="text-blue-500">.</span>
           </h1>
           <p className="text-sm text-zinc-500 mt-1">English Education Student</p>
         </div>
@@ -38,7 +38,7 @@ const Footer = () => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-violet-600 transition-colors"
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-zinc-800 hover:bg-blue-600 transition-colors"
             >
               <i className={`${social.icon} ri-lg`}></i>
             </a>

@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#beranda" className="text-2xl font-bold tracking-tight">
-          Alia<span className="text-violet-500">.</span>
+          Alia<span className="text-blue-500">.</span>
         </a>
 
         {/* Desktop Menu */}
@@ -39,7 +39,7 @@ const Navbar = () => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-zinc-300 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-violet-500 after:transition-all hover:after:w-full"
+                className="text-sm font-medium text-zinc-300 hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 after:transition-all hover:after:w-full"
               >
                 {link.label}
               </a>
