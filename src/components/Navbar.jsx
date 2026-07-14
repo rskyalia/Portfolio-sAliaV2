@@ -1,16 +1,20 @@
 import { useState, useEffect } from "react";
+import { useLenis } from "./GsapProvider.jsx";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("beranda");
+  const lenis = useLenis();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+    if (!lenis) return;
+
+    const handleScroll = ({ scroll }) => {
+      setScrolled(scroll > 80);
 
       const sections = ["beranda", "tentang", "proyek", "kontak"];
-      const scrollPos = window.scrollY + 120;
+      const scrollPos = scroll + 120;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
@@ -21,9 +25,9 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    lenis.on("scroll", handleScroll);
+    return () => lenis.off("scroll", handleScroll);
+  }, [lenis]);
 
   const navLinks = [
     { href: "#beranda", label: "Beranda", id: "beranda" },
@@ -34,7 +38,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      data-nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-zinc-950/80 backdrop-blur-xl shadow-lg shadow-black/30 border-b border-zinc-800/60 py-3"
           : "bg-transparent py-5"
@@ -64,7 +69,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className="ml-2">
-            <a href="#kontak" className="btn-primary text-sm !py-2 !px-4">
+            <a href="#kontak" className="btn-primary text-sm !py-2 !px-4" data-magnetic>
               Hubungi
               <i className="ri-send-plane-line"></i>
             </a>

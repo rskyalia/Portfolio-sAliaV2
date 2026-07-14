@@ -4,17 +4,31 @@ import { listTools, listTools2, listProyek } from "./data";
 const SectionHeader = ({ badge, title, subtitle, center = true }) => (
   <div
     className={`mb-14 ${center ? "text-center" : ""}`}
-    data-aos="fade-up"
-    data-aos-duration="800"
+    data-section-header
   >
-    <span className="section-badge mb-4">{badge}</span>
-    <h2 className="text-3xl md:text-4xl font-bold mt-3">{title}</h2>
+    <span className="section-badge mb-4" data-header-badge>
+      {badge}
+    </span>
+    <h2 className="text-3xl md:text-4xl font-bold mt-3" data-header-title>
+      {title}
+    </h2>
     {subtitle && (
-      <p className={`text-zinc-400 mt-3 max-w-md leading-relaxed ${center ? "mx-auto" : ""}`}>
+      <p
+        className={`text-zinc-400 mt-3 max-w-md leading-relaxed ${center ? "mx-auto" : ""}`}
+        data-header-subtitle
+      >
         {subtitle}
       </p>
     )}
   </div>
+);
+
+const HeroLine = ({ children, className = "" }) => (
+  <span className="block overflow-hidden">
+    <span className={`block ${className}`} data-hero-line>
+      {children}
+    </span>
+  </span>
 );
 
 function App() {
@@ -26,8 +40,11 @@ function App() {
         className="min-h-screen flex items-center pt-28 pb-20 relative"
       >
         <div className="grid md:grid-cols-2 items-center gap-12 lg:gap-16 w-full">
-          <div className="animate__animated animate__fadeInUp animate__delay-1s order-2 md:order-1">
-            <div className="inline-flex items-center gap-2.5 mb-6 glass-card px-4 py-2 rounded-full text-sm text-zinc-300">
+          <div className="order-2 md:order-1">
+            <div
+              data-hero-fade
+              className="inline-flex items-center gap-2.5 mb-6 glass-card px-4 py-2 rounded-full text-sm text-zinc-300"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -35,41 +52,53 @@ function App() {
               Available for collaboration
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] mb-5">
-              Hi, I'm{" "}
-              <span className="gradient-text">Alia Risky</span>
-              <br />
-              <span className="text-zinc-100">Fauziah</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.12] mb-5">
+              <HeroLine>Hi, I'm</HeroLine>
+              <HeroLine className="gradient-text">Alia Risky</HeroLine>
+              <HeroLine>Fauziah</HeroLine>
             </h1>
 
-            <p className="text-base leading-relaxed text-zinc-400 mb-8 max-w-lg">
+            <p
+              data-hero-fade
+              className="text-base leading-relaxed text-zinc-400 mb-8 max-w-lg"
+            >
               English Education student at Universitas Negeri Malang. Passionate
               about communication, public speaking, and language teaching. I've
               competed in speech contests and love inspiring others through the
               power of English.
             </p>
 
-            <div className="flex flex-wrap gap-3">
-              <a href="" className="btn-primary">
+            <div data-hero-fade className="flex flex-wrap gap-3">
+              <a href="" className="btn-primary" data-magnetic>
                 Download CV
                 <i className="ri-download-cloud-line"></i>
               </a>
-              <a href="#tentang" className="btn-secondary">
+              <a href="#tentang" className="btn-secondary" data-magnetic>
                 Tentang Saya
                 <i className="ri-arrow-down-line"></i>
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-zinc-800/80">
+            <div
+              data-hero-fade
+              className="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-zinc-800/80"
+            >
               {[
-                { value: "5+", label: "Achievements", icon: "ri-trophy-line" },
-                { value: "3+", label: "Years Experience", icon: "ri-time-line" },
-                { value: "4+", label: "Organizations", icon: "ri-team-line" },
+                { value: 5, label: "Achievements", icon: "ri-trophy-line" },
+                { value: 3, label: "Years Experience", icon: "ri-time-line" },
+                { value: 4, label: "Organizations", icon: "ri-team-line" },
               ].map((stat) => (
                 <div key={stat.label} className="group">
                   <div className="flex items-center gap-1.5 mb-1">
-                    <i className={`${stat.icon} text-blue-400/70 text-sm group-hover:text-blue-400 transition-colors`}></i>
-                    <span className="text-2xl md:text-3xl font-bold gradient-text">{stat.value}</span>
+                    <i
+                      className={`${stat.icon} text-blue-400/70 text-sm group-hover:text-blue-400 transition-colors`}
+                    ></i>
+                    <span
+                      className="text-2xl md:text-3xl font-bold gradient-text"
+                      data-counter={stat.value}
+                    >
+                      0+
+                    </span>
                   </div>
                   <p className="text-xs md:text-sm text-zinc-500">{stat.label}</p>
                 </div>
@@ -77,21 +106,41 @@ function App() {
             </div>
           </div>
 
-          <div className="relative flex justify-center md:justify-end animate__animated animate__fadeInUp animate__delay-2s order-1 md:order-2">
+          <div
+            data-hero-image
+            className="relative flex justify-center md:justify-end order-1 md:order-2"
+          >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/15 via-indigo-600/10 to-violet-600/5 blur-3xl rounded-full scale-90"></div>
+              <div
+                data-hero-glow
+                className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-indigo-600/15 to-violet-600/10 blur-3xl rounded-full scale-90"
+              ></div>
 
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/50 ring-1 ring-zinc-700/60">
+              <div className="hero-image-frame relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 ring-1 ring-zinc-700/60">
                 <img
                   src={DataImage.HeroImage}
                   alt="Alia Risky Fauziah"
-                  className="relative w-64 sm:w-72 md:w-80 lg:w-96 object-cover block"
+                  className="relative w-64 sm:w-72 md:w-80 lg:w-96 object-cover block scale-105"
                   loading="eager"
                 />
+              </div>
+
+              <div className="absolute -bottom-4 -left-4 glass-card px-4 py-3 rounded-2xl text-sm hidden sm:flex items-center gap-2">
+                <i className="ri-mic-line text-blue-400"></i>
+                <span className="text-zinc-300">Public Speaker</span>
               </div>
             </div>
           </div>
         </div>
+
+        <a
+          href="#tentang"
+          data-hero-fade
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-zinc-500 text-xs hover:text-zinc-300 transition-colors"
+        >
+          <span className="tracking-widest uppercase">Scroll</span>
+          <i className="ri-arrow-down-line text-lg" data-scroll-indicator></i>
+        </a>
       </section>
 
       {/* ── ABOUT ────────────────────────────────────────── */}
@@ -99,10 +148,8 @@ function App() {
         <SectionHeader badge="Tentang Saya" title="Who Am I?" />
 
         <div
+          data-reveal
           className="xl:w-4/5 w-full mx-auto glass-card rounded-2xl p-8 md:p-10 glass-card-hover"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="100"
         >
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="relative flex-shrink-0 mx-auto md:mx-0">
@@ -142,20 +189,21 @@ function App() {
             center={false}
           />
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+          <div
+            data-stagger
+            className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4"
+          >
             {listTools.map((tool) => (
               <div
                 key={tool.id}
+                data-stagger-item
                 className="group flex items-center gap-4 p-4 glass-card rounded-xl glass-card-hover"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay={tool.dad}
               >
                 <div className="w-14 h-14 flex-shrink-0 bg-zinc-700/80 rounded-xl overflow-hidden ring-1 ring-zinc-600/50 group-hover:ring-blue-500/30 transition-all">
                   <img
                     src={tool.gambar}
                     alt={tool.nama}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
@@ -180,19 +228,23 @@ function App() {
           />
 
           <div className="relative">
-            <div className="absolute left-7 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-zinc-700 to-transparent hidden sm:block"></div>
+            <div
+              data-timeline-line
+              className="absolute left-7 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-zinc-700 to-transparent hidden sm:block"
+            ></div>
 
-            <div className="flex flex-col gap-5">
+            <div data-stagger className="flex flex-col gap-5">
               {listTools2.map((tool, index) => (
                 <div
                   key={tool.id}
+                  data-stagger-item
                   className="relative flex items-start gap-6 sm:pl-16 pl-0"
-                  data-aos="fade-up"
-                  data-aos-duration="800"
-                  data-aos-delay={tool.dad}
                 >
                   <div className="absolute left-0 top-5 w-14 h-14 flex-shrink-0 hidden sm:flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-blue-500 border-4 border-zinc-950 z-10 shadow-lg shadow-blue-500/30"></div>
+                    <div
+                      data-timeline-dot
+                      className="w-4 h-4 rounded-full bg-blue-500 border-4 border-zinc-950 z-10 shadow-lg shadow-blue-500/30"
+                    ></div>
                   </div>
 
                   <div className="flex items-center gap-4 w-full p-5 glass-card rounded-xl glass-card-hover">
@@ -233,24 +285,23 @@ function App() {
           subtitle="Beberapa kegiatan dan pencapaian yang pernah saya raih"
         />
 
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
+        <div data-stagger className="grid lg:grid-cols-2 grid-cols-1 gap-6">
           {listProyek.map((proyek) => (
             <article
               key={proyek.id}
+              data-stagger-item
+              data-parallax-card
               className="group glass-card rounded-2xl overflow-hidden glass-card-hover"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay={proyek.dad}
             >
               <div className="relative overflow-hidden h-56">
                 <img
                   src={proyek.gambar}
                   alt={proyek.nama}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover will-change-transform"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute bottom-4 left-4 right-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <a
                     href={proyek.link}
                     target="_blank"
@@ -305,12 +356,7 @@ function App() {
           subtitle="Ingin berkolaborasi atau sekadar menyapa? Kirim pesan ke saya!"
         />
 
-        <div
-          className="max-w-2xl mx-auto"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="200"
-        >
+        <div data-reveal className="max-w-2xl mx-auto">
           <form
             action="https://formsubmit.co/aliarisky10@gmail.com"
             method="POST"
@@ -364,25 +410,48 @@ function App() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-primary w-full justify-center mt-1 cursor-pointer">
+              <button
+                type="submit"
+                className="btn-primary w-full justify-center mt-1 cursor-pointer"
+                data-magnetic
+              >
                 Kirim Pesan
                 <i className="ri-send-plane-line"></i>
               </button>
             </div>
           </form>
 
-          <div className="flex justify-center gap-4 mt-10">
+          <div
+            data-stagger
+            className="flex flex-wrap justify-center gap-4 mt-10"
+          >
             {[
-              { href: "https://www.instagram.com/alrskyriss/", icon: "ri-instagram-fill", label: "Instagram", hover: "hover:border-pink-500/50 hover:text-pink-400" },
-              { href: "https://wa.me/6285745695068", icon: "ri-whatsapp-fill", label: "WhatsApp", hover: "hover:border-green-500/50 hover:text-green-400" },
-              { href: "https://www.tiktok.com/@alrskyy_", icon: "ri-tiktok-fill", label: "TikTok", hover: "hover:border-zinc-400/50 hover:text-white" },
+              {
+                href: "https://www.instagram.com/alrskyriss/",
+                icon: "ri-instagram-fill",
+                label: "Instagram",
+                hover: "hover:border-pink-500/50 hover:text-pink-400",
+              },
+              {
+                href: "https://wa.me/6285745695068",
+                icon: "ri-whatsapp-fill",
+                label: "WhatsApp",
+                hover: "hover:border-green-500/50 hover:text-green-400",
+              },
+              {
+                href: "https://www.tiktok.com/@alrskyy_",
+                icon: "ri-tiktok-fill",
+                label: "TikTok",
+                hover: "hover:border-zinc-400/50 hover:text-white",
+              },
             ].map((s) => (
               <a
                 key={s.icon}
+                data-stagger-item
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-2.5 text-sm text-zinc-400 glass-card px-5 py-3 rounded-xl transition-all duration-200 ${s.hover}`}
+                className={`flex items-center gap-2.5 text-sm text-zinc-400 glass-card px-5 py-3 rounded-xl transition-all duration-300 ${s.hover}`}
               >
                 <i className={`${s.icon} ri-lg`}></i>
                 {s.label}

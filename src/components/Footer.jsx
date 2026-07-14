@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="mt-32 relative">
+    <footer data-reveal className="mt-32 relative">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent"></div>
 
       <div className="py-12 flex md:flex-row flex-col gap-10 md:gap-0 justify-between items-center">
