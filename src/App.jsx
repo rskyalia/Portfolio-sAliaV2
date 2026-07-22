@@ -69,7 +69,7 @@ function App() {
             </p>
 
             <div data-hero-fade className="flex flex-wrap gap-3">
-              <a href="" className="btn-primary" data-magnetic>
+              <a href="/public/assets/resume_alia/resumealia.pdf" className="btn-primary" data-magnetic>
                 Download CV
                 <i className="ri-download-cloud-line"></i>
               </a>

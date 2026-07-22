@@ -93,6 +93,7 @@ import Proyek5 from "/assets/proyek/proyek5.webp";
 import Proyek6 from "/assets/proyek/proyek6.webp";
 import Proyek7 from "/assets/proyek/Mutiara.png";
 import Proyek8 from "/assets/proyek/gemaped.webp";
+import Proyek9 from "/assets/proyek/gemapediabaru.jpeg"
 
 export const listProyek = [
   {
@@ -142,7 +143,7 @@ export const listProyek = [
   },
   {
     id: 6,
-    gambar: Proyek8,
+    gambar: Proyek9,
     nama: "Gemapedia",
     desk: "Gerakan Mahasiswa Peduli Pendidikan Universitas Negeri Malang",
     tools: ["Organization", "Activity"],
